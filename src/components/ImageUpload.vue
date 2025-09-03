@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white border-4 border-black border-t-0 rounded-b-lg p-6 shadow-lg">
+    <div class="bg-white border-4 border-black border-t-0 rounded-b-lg p-4 shadow-lg h-full flex flex-col">
         <!-- Upload Area -->
         <div
             ref="uploadArea"
@@ -9,7 +9,7 @@
             @dragleave.prevent="handleDragLeave"
             @drop.prevent="handleDrop"
             :class="[
-                'border-4 border-dashed rounded-lg p-12 text-center cursor-pointer transition-all duration-300',
+                'border-4 border-dashed rounded-lg p-6 text-center cursor-pointer transition-all duration-300 flex-1 flex flex-col justify-center',
                 isDragOver ? 'border-pink-400 bg-pink-50' : 'border-gray-300 bg-gray-50 hover:border-pink-400 hover:bg-pink-50'
             ]"
         >
@@ -17,8 +17,8 @@
 
             <!-- Upload Icon -->
             <div class="mb-4">
-                <div class="w-16 h-16 bg-black rounded-lg mx-auto flex items-center justify-center">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 bg-black rounded-lg mx-auto flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
@@ -29,13 +29,13 @@
                 </div>
             </div>
 
-            <h3 class="text-xl font-bold mb-2 flex items-center justify-center gap-2">🍌 拖拽上传</h3>
+            <h3 class="text-lg font-bold mb-2 flex items-center justify-center gap-2">🍌 拖拽上传</h3>
             <p class="text-gray-600 mb-1">或点击浏览文件</p>
             <p class="text-sm text-gray-500">支持多张图片 JPG, PNG, GIF 格式 (最大 5MB)</p>
         </div>
 
         <!-- Thumbnails -->
-        <div v-if="thumbnails.length > 0" class="grid grid-cols-4 gap-4 mt-6">
+        <div v-if="thumbnails.length > 0" class="grid grid-cols-4 gap-3 mt-4">
             <div v-for="(thumbnail, index) in thumbnails" :key="index" class="relative aspect-square bg-gray-100 rounded-lg overflow-hidden group border-2 border-black">
                 <img :src="thumbnail" :alt="`Image ${index + 1}`" class="w-full h-full object-cover" />
                 <button

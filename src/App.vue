@@ -6,69 +6,73 @@
         <div class="absolute bottom-20 left-32 text-5xl opacity-25 animate-bounce delay-1000">🍌</div>
         <div class="absolute bottom-40 right-10 text-3xl opacity-20 animate-pulse delay-500">🍌</div>
 
-        <div class="container mx-auto px-4 py-8 max-w-4xl relative z-10">
+        <div class="container mx-auto px-3 py-4 relative z-10">
             <!-- Header -->
-            <div class="relative mb-8">
+            <div class="relative mb-6">
                 <div class="bg-gradient-to-r from-orange-400 to-yellow-500 rounded-lg p-6 border-4 border-black shadow-lg">
-                    <div class="flex justify-between items-start">
-                        <div class="text-center flex-1">
-                            <h1 class="text-4xl font-black text-white mb-2 flex items-center justify-center gap-2">
-                                🍌 Nano<br />
-                                <span class="text-yellow-100 text-5xl">Banana</span>
-                            </h1>
-                            <p class="text-white font-medium">上传你的图片，我来创造艺术！</p>
-                        </div>
-
-                        <!-- API设置按钮 -->
-                        <div class="flex-shrink-0">
-                            <button
-                                @click="showApiSettings = !showApiSettings"
-                                :class="[
-                                    'px-4 py-2 rounded-lg border-2 border-white font-bold text-sm transition-all flex items-center gap-2',
-                                    apiKey ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-white text-orange-500 hover:bg-gray-100 animate-pulse'
-                                ]"
-                            >
-                                <span>🔑</span>
-                                <span v-if="!apiKey">需要配置API</span>
-                                <span v-else>API已配置</span>
-                                <svg :class="['w-4 h-4 transition-transform', showApiSettings ? 'rotate-180' : '']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                        </div>
+                    <div class="text-center">
+                        <h1 class="text-4xl font-black text-white mb-1 flex items-center justify-center gap-2">
+                            🍌 Nano<br />
+                            <span class="text-yellow-100 text-5xl">Banana</span>
+                        </h1>
+                        <p class="text-white text-base font-medium">上传你的图片，我来创造艺术！</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- API设置区域 -->
+            <div class="mb-6">
+                <div class="flex justify-center">
+                    <button
+                        @click="showApiSettings = !showApiSettings"
+                        :class="[
+                            'px-6 py-3 rounded-lg border-4 border-black font-bold text-sm transition-all flex items-center gap-2 shadow-lg',
+                            apiKey ? 'bg-green-400 text-white hover:bg-green-500' : 'bg-red-400 text-white hover:bg-red-500 animate-pulse'
+                        ]"
+                    >
+                        <span>🔑</span>
+                        <span v-if="!apiKey">需要配置API密钥</span>
+                        <span v-else>API密钥已配置</span>
+                        <svg :class="['w-4 h-4 transition-transform', showApiSettings ? 'rotate-180' : '']" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
                 </div>
 
                 <!-- API设置折叠面板 -->
-                <div v-if="showApiSettings" class="mt-4">
+                <div v-if="showApiSettings" class="mt-4 max-w-2xl mx-auto">
                     <ApiKeyInput v-model="apiKey" />
                 </div>
             </div>
 
-            <!-- Step 1: Upload Image -->
-            <div class="mb-6">
-                <div class="bg-pink-400 text-white font-bold px-4 py-2 rounded-t-lg border-4 border-black border-b-0 flex items-center gap-2">🍌 1. 上传图片</div>
-                <ImageUpload v-model="selectedImages" />
-            </div>
-
-            <!-- Step 2: Style Selection and Custom Prompt -->
-            <div class="mb-6">
-                <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold px-4 py-2 rounded-t-lg border-4 border-black border-b-0 flex items-center gap-2">
-                    🎨 2. 选择风格或自定义提示词
+            <!-- 主要内容区域：左右布局 -->
+            <div class="grid lg:grid-cols-2 gap-4 lg:gap-6 mb-6 lg:items-stretch min-h-[400px]">
+                <!-- 左侧：上传图片 -->
+                <div class="flex flex-col h-full">
+                    <div class="bg-pink-400 text-white font-bold px-4 py-2 rounded-t-lg border-4 border-black border-b-0 flex items-center gap-2">🍌 1. 上传图片</div>
+                    <div class="flex-1">
+                        <ImageUpload v-model="selectedImages" />
+                    </div>
                 </div>
-                <StylePromptSelector v-model:selectedStyle="selectedStyle" v-model:customPrompt="customPrompt" :templates="styleTemplates" />
+
+                <!-- 右侧：选择风格或自定义提示词 -->
+                <div class="flex flex-col h-full">
+                    <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white font-bold px-4 py-2 rounded-t-lg border-4 border-black border-b-0 flex items-center gap-2">
+                        🎨 2. 选择风格或自定义提示词
+                    </div>
+                    <div class="flex-1">
+                        <StylePromptSelector v-model:selectedStyle="selectedStyle" v-model:customPrompt="customPrompt" :templates="styleTemplates" />
+                    </div>
+                </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="flex flex-col items-center gap-4 mb-8">
+            <!-- 生成按钮 -->
+            <div class="mb-6">
                 <GenerateButton :loading="isLoading" :disabled="!canGenerate" @click="handleGenerate" />
-                <!-- <button @click="handleReset" class="px-8 py-3 bg-white border-4 border-black rounded-lg font-bold hover:bg-gray-100 transition-colors flex items-center gap-2">
-                    🔄 重置
-                </button> -->
             </div>
 
-            <!-- Step 3: Result -->
-            <div>
+            <!-- 生成结果区域：全宽 -->
+            <div class="w-full">
                 <div class="bg-black text-white font-bold px-4 py-2 rounded-t-lg border-4 border-black border-b-0 flex items-center gap-2">✨ 3. 生成结果</div>
                 <ResultDisplay :result="result" :loading="isLoading" :error="error" />
             </div>
