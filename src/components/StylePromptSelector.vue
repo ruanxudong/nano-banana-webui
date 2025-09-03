@@ -29,13 +29,13 @@
                 :key="template.id"
                 @click="selectStyle(template.id)"
                 :class="[
-                    'p-3 rounded-lg border-2 border-black cursor-pointer transition-all',
+                    'p-4 rounded-lg border-2 border-black cursor-pointer transition-all',
                     selectedStyle === template.id ? 'bg-yellow-300 border-orange-500' : 'bg-yellow-50 hover:bg-yellow-100'
                 ]"
             >
                 <div class="flex items-start gap-3">
                     <!-- 缩略图 -->
-                    <img v-if="template.image" :src="template.image" :alt="template.title" class="w-12 h-12 rounded border-2 border-black object-cover flex-shrink-0" />
+                    <img v-if="template.image" :src="template.image" :alt="template.title" class="w-20 h-20 rounded border-2 border-black object-cover flex-shrink-0" />
 
                     <!-- 内容 -->
                     <div class="flex-1 min-w-0">

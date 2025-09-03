@@ -70,6 +70,8 @@ const handleFileSelect = (event: Event) => {
     const target = event.target as HTMLInputElement
     if (target.files) {
         handleFiles(Array.from(target.files))
+        // 重置input的value，允许重新上传相同的文件
+        target.value = ''
     }
 }
 

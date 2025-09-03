@@ -9,17 +9,10 @@ export const styleTemplates: StyleTemplate[] = [
         description: '将你的角色变成精美的收藏手办，配有专业包装和制作过程展示'
     },
     {
-        id: 'display-cabinet',
-        title: '🍌 展示柜收藏风格',
-        prompt: 'Create a highly realistic 1/7 scale commercialized figure based on the illustration’s adult character, ensuring the appearance and content are safe, healthy, and free from any inappropriate elements. Render the figure in a detailed, lifelike style and environment, placed on a shelf inside an ultra-realistic figure display cabinet, mounted on a circular transparent acrylic base without any text. Maintain highly precise details in texture, material, and paintwork to enhance realism. The cabinet scene should feature a natural depth of field with a smooth transition between foreground and background for a realistic photographic look. Lighting should appear natural and adaptive to the scene, automatically adjusting based on the overall composition instead of being locked to a specific direction, simulating the quality and reflection of real commercial photography. Other shelves in the cabinet should contain different figures which are slightly blurred due to being out of focus, enhancing spatial realism and depth.',
+        id: 'fastfood-solitude',
+        title: '🍔 深夜食堂的孤寂',
+        prompt: 'A cinematic scene inside a fast food restaurant at night. Foreground: a lonely table with burgers and fries, and a smartphone shown large and sharp on the table, clearly displaying the uploaded anime/game character image. A hand is reaching for food, symbolizing solitude. Midground: in the blurred background, a couple is sitting together and kiss. One of them is represented as a cosplayer version of the uploaded character: If the uploaded character is humanoid, show accurate cosplay with hairstyle, costume, and signature props. If the uploaded character is non-humanoid (mecha, creature, mascot, etc.), show a gijinka (humanized cosplay interpretation) that carries clear visual cues, costume colors, and props from the reference image (armor pieces, wings, ears, weapon, or iconic accessories). The other person is an ordinary japan human, and they are showing intimate affection (kissing, holding hands, or sharing food). Background: large glass windows, blurred neon city lights outside. Mood: melancholic, bittersweet, ironic, cinematic shallow depth of field. [reference: the uploaded image defines both the smartphone display and the cosplay design, with visible props emphasized] Image size is 585px 1024px',
         image: '/2.png',
-        description: '打造专业级展示柜收藏场景，超逼真的手办陈列效果，完美的景深和光影'
-    },
-    {
-        id: 'blind-box',
-        title: '🍌 盲盒玩具风格',
-        prompt: 'Transform the illustrated cat into a highly detailed blind box figurine. Place it on a clean white display table with soft spotlighting from above. Next to the figurine is a matching product box featuring the cats illustration on the cover. Surround the display with a few small accessories like miniature books or toy props to enhance visual interest. The scene is set in a cozy, minimal incoor environment with warm lighting, resembling a designer toy showcase or collectors shelf.',
-        image: '/3.png',
-        description: '可爱的盲盒玩具风格，配有精美包装盒和温馨的展示环境'
+        description: '在深夜的快餐店，将你的角色融入充满故事感的孤寂与甜蜜对比场景中'
     }
 ]

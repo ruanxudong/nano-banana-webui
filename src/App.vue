@@ -128,6 +128,15 @@ watch(
     { immediate: false }
 )
 
+// 监听风格和提示词变化，清除之前的生成结果
+watch([selectedStyle, customPrompt], () => {
+    // 当用户改变风格或提示词时，清除之前的结果和错误
+    if (result.value || error.value) {
+        result.value = null
+        error.value = null
+    }
+})
+
 const canGenerate = computed(() => apiKey.value.trim() && selectedImages.value.length > 0 && (selectedStyle.value || customPrompt.value.trim()) && !isLoading.value)
 
 const handleGenerate = async () => {
@@ -135,6 +144,7 @@ const handleGenerate = async () => {
 
     isLoading.value = true
     error.value = null
+    // 立即清除之前的结果，确保用户看到新的生成过程
     result.value = null
 
     try {
@@ -151,6 +161,8 @@ const handleGenerate = async () => {
         result.value = response.imageUrl
     } catch (err) {
         error.value = err instanceof Error ? err.message : '生成失败'
+        // 生成失败时也要清除结果
+        result.value = null
     } finally {
         isLoading.value = false
     }
