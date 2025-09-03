@@ -77,6 +77,9 @@
                 <ResultDisplay :result="result" :loading="isLoading" :error="error" />
             </div>
         </div>
+
+        <!-- Footer -->
+        <Footer />
     </div>
 </template>
 
@@ -87,6 +90,7 @@ import ImageUpload from './components/ImageUpload.vue'
 import StylePromptSelector from './components/StylePromptSelector.vue'
 import GenerateButton from './components/GenerateButton.vue'
 import ResultDisplay from './components/ResultDisplay.vue'
+import Footer from './components/Footer.vue'
 import { generateImage } from './services/api'
 import { styleTemplates } from './data/templates'
 import { LocalStorage } from './utils/storage'
