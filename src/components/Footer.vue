@@ -23,8 +23,8 @@
                         <p class="text-gray-400 text-xs">© 2025 Nano Banana. Made with 🍌 and ❤️</p>
                         <p class="text-gray-500 text-xs mt-1">
                             Powered by Kiro AI •
-                            <a href="https://github.com/liu-ziting/nano-banana" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors">
-                                Powered by Liuziting
+                            <a href="https://zez4fk9f43.feishu.cn/wiki/CHyOwQ3Yki8PudkKhwNcg4tknJc?from=from_copylink" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline transition-colors">
+                                Powered by Ruan Xudong
                             </a>
                         </p>
                     </div>
