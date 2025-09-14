@@ -11,11 +11,11 @@
 
                     <!-- 链接区域 -->
                     <div class="flex flex-wrap justify-center gap-4 mb-4 text-sm">
-                        <a href="https://eat.lz-t.top/" target="_blank" class="text-yellow-300 hover:text-yellow-100 transition-colors flex items-center gap-1"> 一饭封神 </a>
+                        <a href="https://zez4fk9f43.feishu.cn/wiki/CHyOwQ3Yki8PudkKhwNcg4tknJc?from=from_copylink" target="_blank" class="text-yellow-300 hover:text-yellow-100 transition-colors flex items-center gap-1"> 关于作者 阮旭东 </a>
                         <span class="text-gray-500">|</span>
-                        <a href="https://xhs.lz-t.top/" target="_blank" class="text-yellow-300 hover:text-yellow-100 transition-colors"> 小红书解析 </a>
+                        <a href="https://zez4fk9f43.feishu.cn/wiki/DytnwJ1O4ifLpPkJSfCc4WG3nDc?from=from_copylink" target="_blank" class="text-yellow-300 hover:text-yellow-100 transition-colors"> Nano banana PS插件 </a>
                         <span class="text-gray-500">|</span>
-                        <a href="https://prompt.lz-t.top/" class="text-yellow-300 hover:text-yellow-100 transition-colors"> 图片转提示词 </a>
+                        <a href="https://zez4fk9f43.feishu.cn/wiki/IEcfwujTDiGsNDkLYN2cWUzsn3d?from=from_copylink" class="text-yellow-300 hover:text-yellow-100 transition-colors"> 搞定提示词 PS插件 </a>
                     </div>
 
                     <!-- 版权信息 -->
